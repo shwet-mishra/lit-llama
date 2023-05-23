@@ -38,9 +38,9 @@ from scripts.prepare_alpaca import generate_prompt
 from lightning.fabric.strategies import DeepSpeedStrategy
 
 
-eval_interval = 19
-save_interval = 19
-eval_iters = 19
+eval_interval = 12
+save_interval = 12
+eval_iters = 12
 log_interval = 1
 devices = 1
 
