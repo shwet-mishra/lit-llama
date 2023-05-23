@@ -38,9 +38,9 @@ from scripts.prepare_alpaca import generate_prompt
 from lightning.fabric.strategies import DeepSpeedStrategy
 
 
-eval_interval = 600
-save_interval = 1000
-eval_iters = 100
+eval_interval = 19
+save_interval = 19
+eval_iters = 19
 log_interval = 1
 devices = 1
 
@@ -49,11 +49,11 @@ learning_rate = 9e-3
 batch_size = 64 / devices
 micro_batch_size = 4
 gradient_accumulation_steps = batch_size // micro_batch_size
-epoch_size = 50000  # train dataset size
+epoch_size = 1188  # train dataset size
 num_epochs = 5
 max_iters = num_epochs * epoch_size // devices
 weight_decay = 0.02
-max_seq_length = 256  # see scripts/prepare_alpaca.py
+max_seq_length = 2000  # see scripts/prepare_alpaca.py
 warmup_steps = epoch_size * 2 // micro_batch_size // devices  # 2 epoch
 
 ds_config = {
@@ -65,7 +65,7 @@ ds_config = {
 
 def main(
     data_dir: str = "data/alpaca", 
-    pretrained_path: str = "checkpoints/lit-llama/7B/lit-llama.pth",
+    pretrained_path: str = "/databricks/driver/lit-llama/checkpoints/lit-llama/7B/lit-llama.pth",
     out_dir: str = "out/adapter_v2/alpaca",
 ):
 
@@ -162,7 +162,7 @@ def train(
 
 
 def generate_response(model, instruction, input=""):
-    tokenizer = Tokenizer("checkpoints/lit-llama/tokenizer.model")
+    tokenizer = Tokenizer("/databricks/driver/checkpoints/lit-llama/tokenizer.model")
     sample = {"instruction": instruction, "input": input}
     prompt = generate_prompt(sample)
     encoded = tokenizer.encode(prompt, bos=True, eos=False, device=model.device)
