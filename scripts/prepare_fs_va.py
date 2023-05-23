@@ -14,7 +14,7 @@ from lit_llama.tokenizer import Tokenizer
 from tqdm import tqdm
 
 
-DATA_FILE = "/dbfs/FileStore/kumar.harish@freshworks.com/json_str_4.json"
+DATA_FILE = "/dbfs/Shared/llm/va_summarize_llm/json_str_4.json"
 DATA_FILE_NAME = "json_str_4.json"
 IGNORE_INDEX = -1
 
