@@ -155,7 +155,7 @@ def train(
 
 
 def generate_response(model, instruction, input=""):
-    tokenizer = Tokenizer("/databricks/driver/checkpoints/lit-llama/tokenizer.model")
+    tokenizer = Tokenizer("/databricks/driver/lit-llama/checkpoints/lit-llama/tokenizer.model")
     sample = {"instruction": instruction, "input": input}
     prompt = generate_prompt(sample)
     encoded = tokenizer.encode(prompt, bos=True, eos=False, device=model.device)
