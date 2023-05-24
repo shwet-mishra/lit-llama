@@ -80,6 +80,7 @@ def main(
     tokenizer = Tokenizer(tokenizer_path)
     sample = {"instruction": prompt, "input": input}
     prompt = generate_prompt(sample)
+    print("Final Input: ",prompt)
     encoded = tokenizer.encode(prompt, bos=True, eos=False, device=model.device)
     prompt_length = encoded.size(0)
 
