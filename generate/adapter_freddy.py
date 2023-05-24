@@ -22,7 +22,7 @@ PROMPT = """As an IT Service virtual agent, classify given user queries into one
 INPUT = "aefaf"
 def main(
     prompt: str = PROMPT,
-    input: str = "",
+    input: str = INPUT,
     adapter_path: Path = Path("out/adapter/alpaca/lit-llama-adapter-finetuned.pth"),
     pretrained_path: Path = Path("checkpoints/lit-llama/7B/lit-llama.pth"),
     tokenizer_path: Path = Path("checkpoints/lit-llama/tokenizer.model"),
