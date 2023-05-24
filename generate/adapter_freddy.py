@@ -18,7 +18,8 @@ from lit_llama.utils import EmptyInitOnDevice, lazy_load, llama_model_lookup
 from scripts.prepare_alpaca import generate_prompt
 
 
-PROMPT = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request. ### Instruction: As an IT Service virtual agent, classify given user queries into one of the following categories: Complete, Vague, Gibberish, or Out of Scope. ### Input: aefaf ### Response:"""
+PROMPT = """As an IT Service virtual agent, classify given user queries into one of the following categories: Complete, Vague, Gibberish, or Out of Scope."""
+INPUT = "aefaf"
 def main(
     prompt: str = PROMPT,
     input: str = "",
