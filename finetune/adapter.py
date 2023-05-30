@@ -40,14 +40,14 @@ devices = 1
 
 # Hyperparameters
 learning_rate = 9e-3
-batch_size = 64 / devices
-micro_batch_size = 4
+batch_size = 1 #64 / devices
+micro_batch_size = 1
 gradient_accumulation_steps = batch_size // micro_batch_size
 epoch_size = 745  # train dataset size
 num_epochs = 5
 max_iters = num_epochs * epoch_size // devices
 weight_decay = 0.02
-max_seq_length = 256  # see scripts/prepare_alpaca.py
+max_seq_length = 512  # see scripts/prepare_alpaca.py
 warmup_steps = epoch_size * 2 // micro_batch_size // devices  # 2 epoch
 
 ds_config = {
