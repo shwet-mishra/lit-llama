@@ -23,7 +23,7 @@ def prepare(
     destination_path: Path = Path("/dbfs/Shared/llm/va_summarize_llm/"), 
     tokenizer_path: Path = Path("/databricks/driver/lit-llama/checkpoints/lit-llama/tokenizer.model"),
     test_split_size: int = 200,
-    max_seq_length: int = 2048,
+    max_seq_length: int = 1024,
     seed: int = 42,
     mask_inputs: bool = False,  # as in alpaca-lora
     data_file_name: str = DATA_FILE_NAME
