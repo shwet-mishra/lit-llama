@@ -32,9 +32,9 @@ from scripts.prepare_alpaca import generate_prompt
 from lightning.fabric.strategies import DeepSpeedStrategy
 
 
-eval_interval = 24
-save_interval = 24
-eval_iters = 24
+eval_interval = 38
+save_interval = 38
+eval_iters = 38
 log_interval = 1
 devices = 1
 
@@ -43,7 +43,7 @@ learning_rate = 9e-3
 batch_size = 32 #64 / devices
 micro_batch_size = 1
 gradient_accumulation_steps = batch_size // micro_batch_size
-epoch_size = 745  # train dataset size
+epoch_size = 1188  # train dataset size
 num_epochs = 5
 max_iters = num_epochs * epoch_size // devices
 weight_decay = 0.02
