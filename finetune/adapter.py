@@ -47,7 +47,7 @@ epoch_size = 745  # train dataset size
 num_epochs = 5
 max_iters = num_epochs * epoch_size // devices
 weight_decay = 0.02
-max_seq_length = 512  # see scripts/prepare_alpaca.py
+max_seq_length = 756  # see scripts/prepare_alpaca.py
 warmup_steps = epoch_size * 2 // micro_batch_size // devices  # 2 epoch
 
 ds_config = {

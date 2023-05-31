@@ -14,16 +14,16 @@ from lit_llama.tokenizer import Tokenizer
 from tqdm import tqdm
 
 
-DATA_FILE = "/dbfs/Shared/llm/va_ood_llm/query_type.json"
-DATA_FILE_NAME = "query_type.json"
+DATA_FILE = "/dbfs/Shared/llm/va_summarize_llm/json_str_4.json"
+DATA_FILE_NAME = "json_str_4.json"
 IGNORE_INDEX = -1
 
 
 def prepare(
-    destination_path: Path = Path("/dbfs/Shared/llm/va_ood_llm/"), 
+    destination_path: Path = Path("/dbfs/Shared/llm/va_summarize_llm/"), 
     tokenizer_path: Path = Path("/databricks/driver/lit-llama/checkpoints/lit-llama/tokenizer.model"),
-    test_split_size: int = 100,
-    max_seq_length: int = 256,
+    test_split_size: int = 200,
+    max_seq_length: int = 756,
     seed: int = 42,
     mask_inputs: bool = False,  # as in alpaca-lora
     data_file_name: str = DATA_FILE_NAME
